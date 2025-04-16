@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <link rel="icon" href="image/favicon.png" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffd6e0);
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      flex-direction: column;
+    }
+
+    .profile-header {
+      width: 100%;
+      max-width: 1080px;
+      background: #fff0f5;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(255, 105, 135, 0.25);
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .profile-pic-container {
+      flex-shrink: 0;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: white;
+      border: 5px solid #fff0f5;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 5px;
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffb6c1;
+    }
+
+    .profile-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .name {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      color: #d6336c;
+    }
+
+    .handle {
+      font-size: 16px;
+      color: #666;
+      margin: 4px 0 10px;
+    }
+
+    .bio {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      background: #ff5e7e;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.5s ease-in-out, background 0.2s ease-in-out;
+    }
+
+    .buttons a:hover {
+      background: #ff3366;
+      transform: translateY(20px);
+    }
+
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.7s ease;
+    }
+
+    .gif-container {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .gif-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .interests-container {
+      width: 100%;
+      max-width: 1080px;
+      padding: 20px;
+      background: #fff0f5;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(255, 105, 135, 0.25);
+      margin-top: 40px;
+    }
+
+    .interests-container h2 {
+      font-size: 28px;
+      color: #d6336c;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .interest {
+      font-size: 18px;
+      color: #444;
+      margin: 20px 0 10px;
+    }
+
+    .music-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .music-item {
+      width: 200px;
+      text-align: center;
+      border-radius: 12px;
+    }
+
+    .music-item.clickable {
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .music-item.clickable:hover {
+      transform: scale(1.03);
+    }
+
+    .music-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .music-title {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #d6336c;
+      font-size: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile-pic-container {
+        width: 120px;
+        height: 120px;
+      }
+
+      .name {
+        font-size: 24px;
+      }
+
+      .gif-container {
+        width: 160px;
+        height: 160px;
+        margin-top: 20px;
+      }
+
+      .music-item {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-header">
+    <div class="profile-pic-container">
+      <img src="image/profile.png" alt="Profile Picture" class="profile-pic">
+    </div>
+
+    <div class="profile-info">
+      <div class="name">Justine Mae Alvarez Cajes</div>
+      <div class="handle">(Aki)</div>
+      <div class="bio">💖 1.8K followers • 127 following</div>
+      <div class="buttons">
+        <a href="like-about-you.html" class="transition-link" id="link1">💖 I Like About You</a>
+        <a href="made-this.html" class="transition-link" id="link2">✨ Why I Made This</a>
+        <a href="who-made-this.html" class="transition-link" id="link3">🧑‍💻 Who Made This</a>
+      </div>
+    </div>
+
+    <div class="gif-container">
+      <img src="image/bear.gif" alt="GIF">
+    </div>
+  </div>
+
+  <div class="interests-container">
+    <h2>Things that remind me of you:</h2>
+
+    <div class="interest">🎶 Music you can try clicking it.</div>
+    <div class="music-gallery">
+      <div class="music-item clickable" onclick="playMusic('audio1')">
+        <img src="image/tibok.jpg" alt="Tibok">
+        <div class="music-title">Tibok</div>
+        <audio id="audio1" src="music/tibok.mp3"></audio>
+      </div>
+      <div class="music-item clickable" onclick="playMusic('audio2')">
+        <img src="image/blue.jpg" alt="Blue">
+        <div class="music-title">Blue</div>
+        <audio id="audio2" src="music/blue.mp3"></audio>
+      </div>
+      <div class="music-item clickable" onclick="playMusic('audio3')">
+        <img src="image/sining.jpg" alt="Sining">
+        <div class="music-title">Sining</div>
+        <audio id="audio3" src="music/sining.mp3"></audio>
+      </div>
+      <div class="music-item clickable" onclick="playMusic('audio4')">
+        <img src="image/randomantic.jpg" alt="Randomantic">
+        <div class="music-title">Randomantic</div>
+        <audio id="audio4" src="music/randomantic.mp3"></audio>
+      </div>
+    </div>
+
+    <div class="interest">🧸 Plushies</div>
+    <div class="music-gallery">
+      <div class="music-item">
+        <img src="image/rabbit.jpg" alt="Rabbit">
+        <div class="music-title">Rabbit</div>
+      </div>
+      <div class="music-item">
+        <img src="image/chinchilla.jpg" alt="Chinchilla">
+        <div class="music-title">Chinchilla</div>
+      </div>
+      <div class="music-item">
+        <img src="image/cat.jpg" alt="Cat">
+        <div class="music-title">Cat</div>
+      </div>
+      <div class="music-item">
+        <img src="image/fox.jpg" alt="Fox">
+        <div class="music-title">Fox</div>
+      </div>
+    </div>
+
+    <div class="interest">⚽ Sports</div>
+    <div class="music-gallery">
+      <div class="music-item">
+        <img src="image/taekwondo.jpg" alt="Taekwondo">
+        <div class="music-title">Taekwondo</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.transition-link').forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        const button = event.target;
+        button.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = button.href;
+        }, 700);
+      });
+    });
+
+    let currentAudio = null;
+
+    function playMusic(id) {
+      if (currentAudio && !currentAudio.paused) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+      }
+
+      const audio = document.getElementById(id);
+      audio.play();
+      currentAudio = audio;
+    }
+  </script>
+
+</body>
+</html>

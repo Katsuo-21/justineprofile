@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why I Made This</title>
+  <link rel="icon" href="image/favicon.png" type="image/x-icon">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #ffd6e0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 40px;
+      color: #d6336c;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    /* Profile Section */
+    .profile-header {
+      width: 100%;
+      max-width: 1080px;
+      background: #fff0f5;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(255, 105, 135, 0.25);
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      position: relative;
+    }
+
+    .profile-pic-container {
+      flex-shrink: 0;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: white;
+      border: 5px solid #fff0f5;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 5px;
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffb6c1;
+    }
+
+    /* GIF Section */
+    .gif-container {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #fff0f5;
+      border: 5px solid #fff0f5;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .gif-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      flex: 1;
+    }
+
+    .name {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      color: #d6336c;
+    }
+
+    .handle {
+      font-size: 16px;
+      color: #666;
+      margin: 4px 0 10px;
+    }
+
+    .bio {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      background: #ff5e7e;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      transition: transform 0.5s ease-in-out, background 0.2s ease-in-out;
+    }
+
+    .buttons a:hover {
+      background: #ff3366;
+      transform: translateY(20px);
+    }
+
+    /* Back Button */
+    .back-button {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 16px;
+      background-color: #ff5e7e;
+      color: white;
+      padding: 6px;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .back-button:hover {
+      background-color: #ff3366;
+    }
+
+    /* Content Section */
+    .content-container {
+      max-width: 1080px;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content-container h2 {
+      font-size: 28px;
+      color: #d6336c;
+      margin-bottom: 20px;
+    }
+
+    .content-container p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .profile-header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body onload="document.body.style.opacity = 1;">
+
+  <!-- Back Button -->
+  <a href="index.html" class="back-button">←</a>
+
+  <h1>Why I Made This?</h1>
+
+  <!-- Profile Section -->
+  <div id="profile-container"></div>
+
+  <!-- Content Section for Why I Made This -->
+  <div class="content-container">
+    <h2>Why I Made This?</h2>
+    <p>I created this project as a way to express my feelings in a fun and creative way. I wanted to make something that would allow me to showcase my admiration and emotions for someone, even though we may not know each other well. It’s a form of creativity and self-expression, something that allows me to share my appreciation for someone who has left an impression on me, even from afar.</p>
+    <p>The idea came to me because sometimes, it’s hard to show appreciation directly, and I wanted to use this platform as an outlet for those feelings. It was also important for me to share that these emotions, even though they might seem subtle or one-sided, are genuine and meaningful. Through this page and others like it, I wanted to create something that reflects my thoughts and feelings in a simple yet expressive manner.</p>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Keep profile info
+    if (!localStorage.getItem("profile-name")) {
+        localStorage.setItem("profile-name", "Justine Mae Alvarez Cajes");
+        localStorage.setItem("profile-handle", "(Aki)");
+        localStorage.setItem("profile-bio", "💖 1.8K followers • 127 following");
+    }
+
+    document.getElementById("profile-container").innerHTML = `
+      <div class="profile-header">
+        <div class="profile-pic-container">
+            <img src="image/profile.png" alt="Profile Picture" class="profile-pic">
+        </div>
+        <div class="profile-info">
+            <div class="name">${localStorage.getItem("profile-name")}</div>
+            <div class="handle">${localStorage.getItem("profile-handle")}</div>
+            <div class="bio">${localStorage.getItem("profile-bio")}</div>
+            <div class="buttons">
+                <a href="like-about-you.html">💖 I Like About You</a>
+                <a href="who-made-this.html">🧑‍💻 Who Made This</a>
+            </div>
+        </div>
+        <!-- GIF Section on the Right -->
+        <div class="gif-container">
+            <img src="image/bear.gif" alt="GIF">
+        </div>
+      </div>
+    `;
+  </script>
+
+</body>
+</html>
